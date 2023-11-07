@@ -12,7 +12,7 @@ function calculate_ul1() {
 
     // Display the result
     document.getElementById("li1").textContent = forty_percent_or_bar + " lbs";
-    document.getElementById("li2").textContent = fifty_five_percent + " lbs";
+    document.getElementById("li2").textContent = fifty_five_percent + " test git";
     document.getElementById("li3").textContent = seventy_percent + " lbs";
     document.getElementById("li4").textContent = eighty_five_percent + " lbs";
 }
