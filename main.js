@@ -13,8 +13,8 @@ function calculate_ul1() {
 
     // Display the result
     document.getElementById("li80percent").textContent = "80% of " + userInput + " = " + eightypercent + " lbs";
-    document.getElementById("li1").textContent = forty_percent_or_bar + " lbs";
-    document.getElementById("li2").textContent = fifty_five_percent + " lbs";
-    document.getElementById("li3").textContent = seventy_percent + " lbs";
-    document.getElementById("li4").textContent = eighty_five_percent + " lbs";
+    document.getElementById("li1").textContent = "5: " + forty_percent_or_bar + " lbs";
+    document.getElementById("li2").textContent = "4: " + fifty_five_percent + " lbs";
+    document.getElementById("li3").textContent = "3: " + seventy_percent + " lbs";
+    document.getElementById("li4").textContent = "2: " + eighty_five_percent + " lbs";
 }
