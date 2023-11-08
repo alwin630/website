@@ -14,12 +14,14 @@
 
     <input type="text" name="yourFieldName" id="userWorkingWeight" placeholder="lbs">
 
-    <button id="myButton" class="btn-primary" type="submit" onclick="calculate_ul1()">Submit</button>
+    <button id="myButton" class="btn-primary" type="submit" onclick="calculate_ul1('default')">Submit</button>
+    
 
     <ul>
         <li>greyskull spreadsheet (if bench or OHP start warmup with the bar)</li>
         <li>&nbsp</li>
-        <li id="li80percent">80% of weight: </li>
+        <li id="li_eighty_p">80% of weight: </li>
+        <button id="myButton2" class="btn-primary" type="button" onclick="calculate_ul1('use_eighty')">Use</button>
         <li>&nbsp</li>
         <li id="li1">5: 40% or bar (the greater of the two)</li>
         <li id="li2">4: 55%</li>

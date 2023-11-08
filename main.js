@@ -1,6 +1,14 @@
-function calculate_ul1() {
-    // Get the user input
+function calculate_ul1(input) {
+
+switch (input) {
+  case "default":
     var userInput = document.getElementById("userWorkingWeight").value;
+    break;
+  case "use_eighty":
+    var userInput = document.getElementById("userWorkingWeight").value * .8;
+    break;
+}
+    
 
     // Perform a calculation (for example, double the input)
     var eightypercent = 2.5 * Math.floor((userInput * .8) / 2.5)
@@ -19,7 +27,7 @@ function calculate_ul1() {
 
 
     // Display the result
-    document.getElementById("li80percent").textContent = "80% of " + userInput + " = " + eightypercent + " lbs " + eightypercent_result;
+    document.getElementById("li_eighty_p").textContent = "80% of " + userInput + " = " + eightypercent + " lbs " + eightypercent_result;
     document.getElementById("li1").textContent = "5: " + forty_percent_or_bar + " lbs " + forty_percent_or_bar_result;
     document.getElementById("li2").textContent = "4: " + fifty_five_percent + " lbs " + fifty_five_percent_result;
     document.getElementById("li3").textContent = "3: " + seventy_percent + " lbs " + seventy_percent_result;
