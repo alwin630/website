@@ -25,7 +25,6 @@ switch (input) {
     var eighty_five_percent_result = writeResultString(calculatePlatesForWeight(eighty_five_percent));
     var workingweight_result = writeResultString(calculatePlatesForWeight(userInput));
 
-
     // Display the result
     document.getElementById("li_eighty_p").textContent = "80% of " + userInput + " = " + eightypercent + " lbs " + eightypercent_result;
     document.getElementById("li1").textContent = "5: " + forty_percent_or_bar + " lbs " + forty_percent_or_bar_result;
