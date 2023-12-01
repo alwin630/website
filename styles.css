@@ -46,13 +46,3 @@ th {
     width: 1px;
     /* Sets a minimal width */
 }
-
-
-
-/* Styling the list item and button to display inline */
-#li_eighty_p,
-.use-button {
-    display: inline;
-    margin-right: 5px;
-    /* Optional: adds a little space between the list item and the button */
-}
