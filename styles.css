@@ -1,10 +1,8 @@
 /*list of links; no bullet points*/
 ul {
     list-style: none;
-    /* 
-    margin: 0%;
-    padding: 0%; 
-    */
+    padding-left: 20px;
+    margin: 0px;
 }
 
 table,
@@ -17,21 +15,21 @@ td {
 
 /* Adding height to the first row */
 th {
-    height: 40px;
+    height: 30px;
     text-align: left;
     /* Adjust this value as needed */
 }
 
 table {
     /* border: 1px solid black; */
-    margin-left: 40px;
+    margin-left: 20px;
     margin-bottom: 40px;
 }
 
 p,
 #index,
 input {
-    margin-left: 40px;
+    margin-left: 20px;
 }
 
 th {
