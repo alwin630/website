@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,33 +16,77 @@
     <input type="text" id="userWorkingWeight" placeholder="lbs">
 
     <button type="submit" onclick="calculate_ul1('default')">Submit</button>
-    
+
 
     <ul>
         <li>greyskull spreadsheet (if bench or OHP start warmup with the bar)</li>
         <li>&nbsp</li>
         <li id="li_eighty_p">80% of weight: </li>
-        <button type="button" onclick="calculate_ul1('use_eighty')">Use</button>
-        <li>&nbsp</li>
-        <li id="li1">5: 40% or bar (the greater of the two)</li>
-        <li id="li2">4: 55%</li>
-        <li id="li3">3: 70%</li>
-        <li id="li4">2: 85%</li>
-        <li id="li5">working: </li>
+        <button type="button" class="use-button" onclick="calculate_ul1('use_eighty')">Use</button>
     </ul>
 
-    <ul>
-        <li>baystrength.com</li>
-        <li>&nbsp</li>
-        <li>bar</li>
-        <li>45%</li>
-        <li>65%</li>
-        <li>85%</li>
-        <li>optional 90-95%</li>
-    </ul>
+    <table>
+        <tr>
+            <!-- Adjust colspan to 3 for the new number of columns -->
+            <th colspan="3">greyskull spreadsheet (bench & overhead press start with 45 lbs)</th>
+        </tr>
+        <tr>
+            <td class="first-column">5: 40%</td>
+            <td class="second-column" id="li1"></td>
+            <td id="newCol1"></td>
+        </tr>
+        <tr>
+            <td class="first-column">4: 55%</td>
+            <td class="second-column" id="li2"></td>
+            <td id="newCol2"></td>
+        </tr>
+        <tr>
+            <td class="first-column">3: 70%</td>
+            <td class="second-column" id="li3"></td>
+            <td id="newCol3"></td>
+        </tr>
+        <tr>
+            <td class="first-column">2: 85%</td>
+            <td class="second-column" id="li4"></td>
+            <td id="newCol4"></td>
+        </tr>
+        <tr>
+            <td class="first-column">working:</td>
+            <td class="second-column" id="li5"></td>
+            <td id="newCol5"></td>
+        </tr>
+    </table>
 
+    <table>
+        <tr>
+            <th colspan="2">baystrength.com</th>
+        </tr>
+        <tr>
+            <td class="first-column">bar</td>
+            <td id="row2"></td>
+        </tr>
+        <tr>
+            <td class="first-column">45%</td>
+            <td id="row3"></td>
+        </tr>
+        <tr>
+            <td class="first-column">65%</td>
+            <td id="row4"></td>
+        </tr>
+        <tr>
+            <td class="first-column">85%</td>
+            <td id="row5"></td>
+        </tr>
+        <tr>
+            <td class="first-column">Optional 90-95%</td>
+            <td id="row6"></td>
+        </tr>
+    </table>
+
+    <p>notes:</p>
     <p>round down to nearest 2.5 lbs</p>
     <p>keep warm ups efficient, only rest a minute or two between sets.</p>
 
 </body>
+
 </html>

@@ -6,3 +6,53 @@ ul {
     padding: 0%; 
     */
 }
+
+table,
+th,
+td {
+    /* border: 1px solid black; */
+    border-collapse: collapse;
+    padding: 7px;
+}
+
+/* Adding height to the first row */
+th {
+    height: 40px;
+    text-align: left;
+    /* Adjust this value as needed */
+}
+
+table {
+    /* border: 1px solid black; */
+    margin-left: 40px;
+    margin-bottom: 40px;
+}
+
+p,
+a,
+input {
+    margin-left: 40px;
+}
+
+th {
+    font-weight: lighter;
+}
+
+/* Class for the columns */
+.first-column,
+.second-column {
+    white-space: nowrap;
+    /* Ensures the text doesn't wrap */
+    width: 1px;
+    /* Sets a minimal width */
+}
+
+
+
+/* Styling the list item and button to display inline */
+#li_eighty_p,
+.use-button {
+    display: inline;
+    margin-right: 5px;
+    /* Optional: adds a little space between the list item and the button */
+}

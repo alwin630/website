@@ -25,12 +25,18 @@ function calculate_ul1(input) {
   var workingweight_result = writeResultString(calculatePlatesForWeight(userInput));
 
   // Display the result
-  document.getElementById("li_eighty_p").innerHTML = "80% of " + userInput + " = " + eightypercent + " lbs " + eightypercent_result;
-  document.getElementById("li1").innerHTML = "5: " + forty_percent_or_bar + " lbs " + forty_percent_or_bar_result;
-  document.getElementById("li2").innerHTML = "4: " + fifty_five_percent + " lbs " + fifty_five_percent_result;
-  document.getElementById("li3").innerHTML = "3: " + seventy_percent + " lbs " + seventy_percent_result;
-  document.getElementById("li4").innerHTML = "2: " + eighty_five_percent + " lbs " + eighty_five_percent_result;
-  document.getElementById("li5").innerHTML = "working: " + userInput + " lbs " + workingweight_result;
+  document.getElementById("li_eighty_p").textContent = "80% of " + userInput + " = " + eightypercent + " lbs " + eightypercent_result;
+
+  document.getElementById("li1").textContent = forty_percent_or_bar + " lbs ";
+  document.getElementById("newCol1").textContent = forty_percent_or_bar_result;
+  document.getElementById("li2").textContent = fifty_five_percent + " lbs ";
+  document.getElementById("newCol2").textContent = fifty_five_percent_result;
+  document.getElementById("li3").textContent = seventy_percent + " lbs ";
+  document.getElementById("newCol3").textContent = seventy_percent_result;
+  document.getElementById("li4").textContent = eighty_five_percent + " lbs ";
+  document.getElementById("newCol4").textContent = eighty_five_percent_result;
+  document.getElementById("li5").textContent = userInput + " lbs ";
+  document.getElementById("newCol5").textContent = workingweight_result;
 }
 
 function writeResultString(usedPlates) {
@@ -69,30 +75,3 @@ function calculatePlatesForWeight(goalWeight) {
 
 // Define your available plates
 const plates = [45, 35, 25, 10, 5, 2.5];
-
-
-
-
-
-
-// function writeResultString(usedPlates) {
-//   let resultString = '';
-//   for (const plate in usedPlates) {
-//     resultString += `(${usedPlates[plate]} x ${plate}) `;
-//   }
-//   return resultString;
-// }
-
-// // Sort the plates in descending order
-// plates.sort((a, b) => b - a);
-
-// let remainingWeight = goalWeight;
-// const usedPlates = {};
-
-// for (const plate of plates) {
-//   if (plate <= remainingWeight) {
-//     const count = Math.floor(remainingWeight / plate);
-//     usedPlates[plate] = count;
-//     remainingWeight -= count * plate;
-//   }
-// }
