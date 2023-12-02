@@ -23,7 +23,7 @@ th {
 table {
     /* border: 1px solid black; */
     margin-left: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 
 p,
@@ -43,4 +43,7 @@ th {
     /* Ensures the text doesn't wrap */
     width: 1px;
     /* Sets a minimal width */
+}
+input {
+    margin-bottom: 16px;
 }

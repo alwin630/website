@@ -9,37 +9,81 @@ function calculate_ul1(input) {
       break;
   }
 
-  // Perform a calculation (for example, double the input)
-  var eightypercent = 2.5 * Math.floor((userInput * .8) / 2.5)
-  var forty_percent_or_bar = Math.max(2.5 * Math.floor((userInput * .4) / 2.5), 45);
-  var fifty_five_percent = Math.max(2.5 * Math.floor((userInput * .55) / 2.5), 45);
-  var seventy_percent = Math.max(2.5 * Math.floor((userInput * .7) / 2.5), 45);
-  var eighty_five_percent = Math.max(2.5 * Math.floor((userInput * .85) / 2.5), 45);
+  // FIRST TABLE
+  var eightyPercent = calcPercent(userInput, 80, false);
+  var fortyPercent = calcPercent(userInput, 40);
+  var fiftyFivePercent = calcPercent(userInput, 55);
+  var seventyPercent = calcPercent(userInput, 70);
+  var eightyFivePercent = calcPercent(userInput, 85);
 
-  // String containing plates needed
-  var eightypercent_result = writeResultString(calculatePlatesForWeight(eightypercent));
-  var forty_percent_or_bar_result = writeResultString(calculatePlatesForWeight(forty_percent_or_bar));
-  var fifty_five_percent_result = writeResultString(calculatePlatesForWeight(fifty_five_percent));
-  var seventy_percent_result = writeResultString(calculatePlatesForWeight(seventy_percent));
-  var eighty_five_percent_result = writeResultString(calculatePlatesForWeight(eighty_five_percent));
-  var workingweight_result = writeResultString(calculatePlatesForWeight(userInput));
+  // SECOND TABLE
+  var fortyFivePercent = calcPercent(userInput, 45);
+  var sixtyFivePercent = calcPercent(userInput, 65);
+  var ninetyPercent = calcPercent(userInput, 90);
+  var ninetyFivePercent = calcPercent(userInput, 95);
+
+  // FIRST TABLE
+  var fortyPercentResult = writeResultString(calculatePlatesForWeight(fortyPercent));
+  var fiftyFivePercentResult = writeResultString(calculatePlatesForWeight(fiftyFivePercent));
+  var seventyPercentResult = writeResultString(calculatePlatesForWeight(seventyPercent));
+  var eightyFivePercentResult = writeResultString(calculatePlatesForWeight(eightyFivePercent));
+  var workingWeightResult = writeResultString(calculatePlatesForWeight(userInput));
+
+  // SECOND TABLE
+  var fortyFivePercentResult = writeResultString(calculatePlatesForWeight(fortyFivePercent));
+  var sixtyFivePercentResult = writeResultString(calculatePlatesForWeight(sixtyFivePercent));
+  // eightyFivePercentResult
+  var ninetyPercentResult = writeResultString(calculatePlatesForWeight(ninetyPercent));
+  var ninetyFivePercentResult = writeResultString(calculatePlatesForWeight(ninetyFivePercent));
 
   // Display the result
-  document.getElementById("li_eighty_p").textContent = "80% of " + userInput + " = " + eightypercent + " lbs " + eightypercent_result;
+  var eightyPercentResult = writeResultString(calculatePlatesForWeight(eightyPercent));
+  document.getElementById("li_eighty_p").textContent = "80% of " + userInput + " = " + eightyPercent + " lbs " + eightyPercentResult;
 
-  document.getElementById("li1").textContent = forty_percent_or_bar + " lbs ";
-  document.getElementById("newCol1").textContent = forty_percent_or_bar_result;
-  document.getElementById("li2").textContent = fifty_five_percent + " lbs ";
-  document.getElementById("newCol2").textContent = fifty_five_percent_result;
-  document.getElementById("li3").textContent = seventy_percent + " lbs ";
-  document.getElementById("newCol3").textContent = seventy_percent_result;
-  document.getElementById("li4").textContent = eighty_five_percent + " lbs ";
-  document.getElementById("newCol4").textContent = eighty_five_percent_result;
-  document.getElementById("li5").textContent = userInput + " lbs ";
-  document.getElementById("newCol5").textContent = workingweight_result;
+  // FIRST TABLE
+  document.getElementById("table1Col2Row1").textContent = fortyPercent + " lbs ";
+  document.getElementById("table1Col2Row2").textContent = fiftyFivePercent + " lbs ";
+  document.getElementById("table1Col2Row3").textContent = seventyPercent + " lbs ";
+  document.getElementById("table1Col2Row4").textContent = eightyFivePercent + " lbs ";
+  document.getElementById("table1Col2Row5").textContent = userInput + " lbs ";
+
+  document.getElementById("table1Col3Row1").textContent = fortyPercentResult;
+  document.getElementById("table1Col3Row2").textContent = fiftyFivePercentResult;
+  document.getElementById("table1Col3Row3").textContent = seventyPercentResult;
+  document.getElementById("table1Col3Row4").textContent = eightyFivePercentResult;
+  document.getElementById("table1Col3Row5").textContent = workingWeightResult;
+
+  // SECOND TABLE
+  document.getElementById("table2Col2Row1").textContent = "45 lbs ";
+  document.getElementById("table2Col2Row2").textContent = fortyFivePercent + " lbs ";
+  document.getElementById("table2Col2Row3").textContent = sixtyFivePercent + " lbs ";
+  document.getElementById("table2Col2Row4").textContent = eightyFivePercent + " lbs ";
+  document.getElementById("table2Col2Row5").textContent = ninetyPercent + " lbs ";
+  document.getElementById("table2Col2Row6").textContent = ninetyFivePercent + " lbs ";
+
+  document.getElementById("table2Col3Row2").textContent = fortyFivePercentResult;
+  document.getElementById("table2Col3Row3").textContent = sixtyFivePercentResult;
+  document.getElementById("table2Col3Row4").textContent = eightyFivePercentResult;
+  document.getElementById("table2Col3Row5").textContent = ninetyPercentResult;
+  document.getElementById("table2Col3Row6").textContent = ninetyFivePercentResult;
+}
+
+function calcPercent(userInput, percentage, useMinimum = true) {
+  var percentageWeight = userInput * (percentage / 100);
+  var roundedWeight = 2.5 * Math.floor(percentageWeight / 2.5);
+
+  if (useMinimum) {
+    return Math.max(roundedWeight, 45);
+  } else {
+    return roundedWeight;
+  }
 }
 
 function writeResultString(usedPlates) {
+  if (usedPlates === null) {
+    return "No valid plate combination found";
+  }
+
   let resultString = '';
   for (const [plate, count] of usedPlates) {
     resultString += `(${plate} x ${count}) `;
