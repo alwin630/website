@@ -16,10 +16,14 @@ function countdown() {
     // Convert the difference to hours, minutes, and seconds
     var hours = Math.floor(diff / 1000 / 60 / 60);
     var minutes = Math.floor(diff / 1000 / 60) % 60;
-    var seconds = Math.floor(diff / 1000) % 60;
+    var seconds = Math.floor(diff / 1000) %     // Get the paragraph element by its ID
+    var countdownElement = document.getElementById("countdownTimer");
 
-    // Format the output
-    var output = hours + " hours " + minutes + " minutes " + seconds + " seconds ";
+    // Update the content of the paragraph
+    countdownElement.textContent = hours + " hours " + minutes + " minutes " + seconds + " seconds ";
+
+    // Update the countdown every second
+    setTimeout(countdown, 1000);
 
     // Display the countdown
     console.log(output);
