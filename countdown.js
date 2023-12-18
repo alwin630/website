@@ -11,7 +11,7 @@ function countdown() {
     document.getElementById("countdownTimer").textContent = hours + " hours " + minutes + " minutes " + seconds + " seconds ";
 
     setTimeout(countdown, 1000);
-
+document.getElementById("countdownTimer").textContent = "Script Loaded";
     console.log(hours);
 }
 
