@@ -24,12 +24,6 @@ function countdown() {
 
     // Update the countdown every second
     setTimeout(countdown, 1000);
-
-    // Display the countdown
-    console.log(output);
-
-    // Update the countdown every second
-    setTimeout(countdown, 1000);
 }
 
 // Start the countdown
